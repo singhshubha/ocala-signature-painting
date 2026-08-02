@@ -23,6 +23,40 @@
     ).observe(scrollSentinel);
   }
 
+  var navSectionIds = ["services", "process", "gallery", "reviews", "area"];
+
+  function setActiveNavLink(activeId) {
+    navSectionIds.forEach(function (id) {
+      var links = document.querySelectorAll('a[href="#' + id + '"]');
+      links.forEach(function (link) {
+        link.classList.toggle("is-active", id === activeId);
+      });
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    var navSections = navSectionIds
+      .map(function (id) {
+        return document.getElementById(id);
+      })
+      .filter(Boolean);
+
+    var sectionObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            setActiveNavLink(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+    );
+
+    navSections.forEach(function (section) {
+      sectionObserver.observe(section);
+    });
+  }
+
   function closeMenu() {
     mobileMenu.classList.remove("is-open");
     navToggle.setAttribute("aria-expanded", "false");
