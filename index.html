@@ -8,7 +8,12 @@
 <meta property="og:title" content="Ocala Signature Painting" />
 <meta property="og:description" content="Licensed and insured interior, exterior, and specialty painting for Ocala and Marion County." />
 <meta property="og:type" content="website" />
-<meta name="theme-color" content="#153A5B" />
+<meta property="og:image" content="images/OCALA-LOGO.png" />
+<meta name="theme-color" content="#541C16" />
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -20,10 +25,7 @@
 <nav class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="brand">
-      <span class="brand-mark">
-        <svg class="icon" viewBox="0 0 256 256" fill="currentColor"><path d="M232,88H216V64a16,16,0,0,0-16-16H48A16,16,0,0,0,32,64V88H16a8,8,0,0,0,0,16H32v24a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V104h16v50L131.6,182.65A16.07,16.07,0,0,0,120,198v34a8,8,0,0,0,16,0V198l100.4-28.68A16.07,16.07,0,0,0,248,154V104A16,16,0,0,0,232,88Zm-32,40H48V64H200v64Z"/></svg>
-      </span>
-      <span class="brand-name">Ocala Signature Painting</span>
+      <img class="brand-logo" src="images/logo-wordmark.png" alt="Ocala Signature Painting" />
     </a>
 
     <ul class="nav-links">
@@ -67,7 +69,10 @@
   <!-- Hero -->
   <header class="hero">
     <div class="hero-bg">
-      <img src="https://picsum.photos/id/101/1800/1150" alt="Exterior facade of a home showing crisp, freshly painted trim and siding" width="1800" height="1150" />
+      <img class="hero-slide" src="https://picsum.photos/id/101/1800/1150" alt="Exterior facade of a home showing crisp, freshly painted trim and siding" width="1800" height="1150" />
+      <img class="hero-slide" src="https://picsum.photos/id/625/1800/1150" alt="Freshly painted interior dining room" width="1800" height="1150" />
+      <img class="hero-slide" src="https://picsum.photos/id/164/1800/1150" alt="Exterior of repainted homes along a street in Ocala" width="1800" height="1150" />
+      <img class="hero-slide" src="https://picsum.photos/id/116/1800/1150" alt="Exterior of a home with fresh paint on a hillside property" width="1800" height="1150" />
     </div>
     <div class="wrap hero-inner">
       <div class="hero-copy">
@@ -123,7 +128,8 @@
 
       <div class="services-grid reveal">
         <article class="service-card service-card--feature">
-          <img src="https://picsum.photos/seed/ocala-exterior-ranch-home/900/1100" alt="Exterior of a repainted single-story home in Ocala" width="900" height="1100" />
+          <img class="fade-slide" src="https://picsum.photos/id/101/900/1100" alt="Exterior of a repainted single-story home in Ocala" width="900" height="1100" />
+          <img class="fade-slide" src="https://picsum.photos/id/164/900/1100" alt="Exterior of repainted homes along a street" width="900" height="1100" />
           <div class="service-content">
             <span class="icon"><svg viewBox="0 0 256 256" fill="currentColor" width="20" height="20"><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"/></svg></span>
             <h3>Exterior Painting</h3>
@@ -137,7 +143,8 @@
         </article>
 
         <article class="service-card">
-          <img src="https://picsum.photos/seed/ocala-interior-living-room-paint/900/700" alt="Freshly painted interior living room" width="900" height="700" />
+          <img class="fade-slide" src="https://picsum.photos/id/625/900/700" alt="Freshly painted interior dining room" width="900" height="700" />
+          <img class="fade-slide" src="https://picsum.photos/id/42/900/700" alt="Interior with freshly painted walls and trim" width="900" height="700" />
           <div class="service-content">
             <span class="icon"><svg viewBox="0 0 256 256" fill="currentColor" width="20" height="20"><path d="M232,216H208V40a16,16,0,0,0-16-16H64A16,16,0,0,0,48,40V216H24a8,8,0,0,0,0,16H232a8,8,0,0,0,0-16Zm-40,0H176V40h16ZM64,40h96V216H64Zm80,92a12,12,0,1,1-12-12A12,12,0,0,1,144,132Z"/></svg></span>
             <h3>Interior Painting</h3>
@@ -150,14 +157,15 @@
         </article>
 
         <article class="service-card">
-          <img src="https://picsum.photos/seed/ocala-cabinet-refinish-kitchen/900/700" alt="Refinished kitchen cabinets" width="900" height="700" />
+          <img class="fade-slide" src="https://picsum.photos/id/42/900/700" alt="Refinished woodwork with a rich, hand-finished tone" width="900" height="700" />
+          <img class="fade-slide" src="https://picsum.photos/id/146/900/700" alt="Detail of a specialty painted finish on trim" width="900" height="700" />
           <div class="service-content">
             <span class="icon"><svg viewBox="0 0 256 256" fill="currentColor" width="20" height="20"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"/></svg></span>
-            <h3>Specialty & Cabinets</h3>
-            <p>Cabinet refinishing, fences, decks, and custom finishes for projects that need an extra level of care.</p>
+            <h3>Specialty Painting</h3>
+            <p>Techniques that call for extra care and the right tools, from color-blended finishes to custom textures most crews skip.</p>
             <ul class="service-list">
-              <li><svg class="icon" viewBox="0 0 256 256" fill="currentColor"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg> Sprayed cabinet finishes</li>
-              <li><svg class="icon" viewBox="0 0 256 256" fill="currentColor"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg> Fences, decks, and trim</li>
+              <li><svg class="icon" viewBox="0 0 256 256" fill="currentColor"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg> Cross-fade and color-blended finishes</li>
+              <li><svg class="icon" viewBox="0 0 256 256" fill="currentColor"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg> Faux finishes and custom textures</li>
             </ul>
           </div>
         </article>
@@ -205,7 +213,8 @@
   <section class="whyus">
     <div class="wrap whyus-grid">
       <div class="whyus-media reveal">
-        <img src="https://picsum.photos/seed/ocala-painter-taping-trim/900/1100" alt="Painter carefully taping trim before painting" width="900" height="1100" />
+        <img class="fade-slide" src="https://picsum.photos/id/146/900/1100" alt="Painter's careful trim and doorway prep work" width="900" height="1100" />
+        <img class="fade-slide" src="https://picsum.photos/id/42/900/1100" alt="Detail of finished woodwork and trim" width="900" height="1100" />
       </div>
       <div class="whyus-copy reveal">
         <h2 style="font-size: clamp(2.1rem, 3.4vw, 2.9rem);">Why Ocala homeowners call us back</h2>
@@ -244,23 +253,23 @@
       </div>
       <div class="gallery-grid reveal">
         <figure class="gallery-item gallery-item--wide">
-          <img src="https://picsum.photos/seed/ocala-gallery-exterior-blue-house/900/500" alt="Exterior repaint of a home in southeast Ocala" loading="lazy" />
+          <img src="https://picsum.photos/id/101/900/500" alt="Exterior repaint of a home in southeast Ocala" loading="lazy" />
           <figcaption>Exterior repaint, SE Ocala</figcaption>
         </figure>
         <figure class="gallery-item gallery-item--tall">
-          <img src="https://picsum.photos/seed/ocala-gallery-hallway-trim/500/900" alt="Repainted hallway and trim" loading="lazy" />
+          <img src="https://picsum.photos/id/146/500/900" alt="Repainted hallway and trim" loading="lazy" />
           <figcaption>Trim and hallway, Belleview</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="https://picsum.photos/seed/ocala-gallery-kitchen-cabinets/500/500" alt="Refinished kitchen cabinets" loading="lazy" />
+          <img src="https://picsum.photos/id/42/500/500" alt="Refinished kitchen cabinets" loading="lazy" />
           <figcaption>Cabinet refinish, NW Ocala</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="https://picsum.photos/seed/ocala-gallery-bedroom-accent-wall/500/500" alt="Bedroom accent wall" loading="lazy" />
+          <img src="https://picsum.photos/id/625/500/500" alt="Bedroom accent wall" loading="lazy" />
           <figcaption>Bedroom, Silver Springs Shores</figcaption>
         </figure>
         <figure class="gallery-item gallery-item--wide">
-          <img src="https://picsum.photos/seed/ocala-gallery-fence-deck/900/500" alt="Freshly stained wooden fence and deck" loading="lazy" />
+          <img src="https://picsum.photos/id/116/900/500" alt="Freshly stained wooden fence and deck" loading="lazy" />
           <figcaption>Fence and deck staining, Dunnellon</figcaption>
         </figure>
       </div>
@@ -286,7 +295,7 @@
           </div>
           <p>"They finished our exterior in four days and left the yard cleaner than they found it."</p>
           <div class="testimonial-author">
-            <div class="avatar" style="background:#C8A46A; color:#153A5B;">DW</div>
+            <div class="avatar" style="background:#C8A46A; color:#541C16;">DW</div>
             <div><strong>Denise Whitfield</strong><span>SE Ocala</span></div>
           </div>
         </div>
@@ -415,7 +424,7 @@
               <option value="">Select one</option>
               <option value="Interior">Interior painting</option>
               <option value="Exterior">Exterior painting</option>
-              <option value="Specialty">Specialty or cabinets</option>
+              <option value="Specialty">Specialty painting</option>
               <option value="Not sure">Not sure yet</option>
             </select>
             <span class="field-error">Please select a project type.</span>
@@ -438,11 +447,8 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#top" class="brand">
-          <span class="brand-mark">
-            <svg class="icon" viewBox="0 0 256 256" fill="currentColor"><path d="M232,88H216V64a16,16,0,0,0-16-16H48A16,16,0,0,0,32,64V88H16a8,8,0,0,0,0,16H32v24a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V104h16v50L131.6,182.65A16.07,16.07,0,0,0,120,198v34a8,8,0,0,0,16,0V198l100.4-28.68A16.07,16.07,0,0,0,248,154V104A16,16,0,0,0,232,88Zm-32,40H48V64H200v64Z"/></svg>
-          </span>
-          Ocala Signature Painting
+        <a href="#top" class="footer-logo-link">
+          <img class="footer-logo" src="images/logo-trimmed.png" alt="Ocala Signature Painting — Quality. Precision. Pride." />
         </a>
         <p>Licensed and insured interior, exterior, and specialty painting, based in Ocala and serving all of Marion County.</p>
       </div>
