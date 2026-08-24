@@ -677,9 +677,17 @@
       <div class="form-card reveal">
         <div class="form-success" id="formSuccess">
           <svg class="icon" viewBox="0 0 256 256" fill="currentColor"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg>
-          <span>Thanks. Your email app should have opened with your details filled in. Send it and we'll be in touch within a business day or two.</span>
+          <span>Thanks. Your request is on its way to us. We'll be in touch within a business day or two.</span>
         </div>
-        <form id="estimateForm" novalidate>
+        <div class="form-error" id="formError">
+          <svg class="icon" viewBox="0 0 256 256" fill="currentColor"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.34-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,88a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg>
+          <span>Something went wrong sending that. Please email us directly at <a href="mailto:info@ocalasignaturepainting.com">info@ocalasignaturepainting.com</a> or call <a href="tel:+13522926909">(352) 292-6909</a>.</span>
+        </div>
+        <form id="estimateForm" novalidate action="https://formsubmit.co/info@ocalasignaturepainting.com" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="New estimate request — Ocala Signature Painting website" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field-row">
             <div class="field" data-field="name">
               <label for="name">Name</label>
@@ -712,6 +720,12 @@
             <label for="message">Project details</label>
             <textarea id="message" name="message" rows="4" placeholder="A few details: rooms or square footage, timeline, anything else worth knowing."></textarea>
             <span class="field-hint">Optional, but it helps us quote faster.</span>
+          </div>
+          <div class="field" data-field="photos">
+            <label for="photos">Photos of the project</label>
+            <input type="file" id="photos" name="attachment" accept="image/*" multiple />
+            <span class="field-hint">Optional — JPG or PNG, up to 10MB total. Seeing the space ahead of time helps us quote faster.</span>
+            <span class="field-error">Those photos add up to more than 10MB — please remove one or resize them.</span>
           </div>
           <button type="submit" class="btn btn-primary form-submit">Request My Estimate</button>
           <p class="form-note">No spam, no obligation. We reply directly, human to human.</p>
