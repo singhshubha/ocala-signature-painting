@@ -102,6 +102,9 @@
 
   var form = document.getElementById("estimateForm");
   var formSuccess = document.getElementById("formSuccess");
+  var formError = document.getElementById("formError");
+  var photosInput = document.getElementById("photos");
+  var MAX_ATTACHMENT_BYTES = 10 * 1024 * 1024; // FormSubmit's combined attachment limit
 
   function setError(fieldName, hasError) {
     var field = form.querySelector('[data-field="' + fieldName + '"]');
@@ -112,6 +115,17 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
+  function attachmentsTooLarge() {
+    if (!photosInput || !photosInput.files || !photosInput.files.length) {
+      return false;
+    }
+    var total = 0;
+    for (var i = 0; i < photosInput.files.length; i++) {
+      total += photosInput.files[i].size;
+    }
+    return total > MAX_ATTACHMENT_BYTES;
+  }
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -119,40 +133,54 @@
     var phone = form.phone.value.trim();
     var email = form.email.value.trim();
     var project = form.project.value;
-    var message = form.message.value.trim();
 
     var nameValid = name.length > 1;
     var phoneValid = phone.length > 6;
     var emailValid = isValidEmail(email);
     var projectValid = project.length > 0;
+    var photosValid = !attachmentsTooLarge();
 
     setError("name", !nameValid);
     setError("phone", !phoneValid);
     setError("email", !emailValid);
     setError("project", !projectValid);
+    setError("photos", !photosValid);
 
-    if (!nameValid || !phoneValid || !emailValid || !projectValid) {
+    if (!nameValid || !phoneValid || !emailValid || !projectValid || !photosValid) {
       return;
     }
 
-    var subject = "Free estimate request: " + project + " painting";
-    var bodyLines = [
-      "Name: " + name,
-      "Phone: " + phone,
-      "Email: " + email,
-      "Project type: " + project,
-      "",
-      "Details:",
-      message || "(none provided)"
-    ];
-    var mailto =
-      "mailto:info@ocalasignaturepainting.com" +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(bodyLines.join("\n"));
+    var submitBtn = form.querySelector(".form-submit");
+    var submitBtnDefaultText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+    formError.classList.remove("is-visible");
+    formSuccess.classList.remove("is-visible");
 
-    window.location.href = mailto;
-    formSuccess.classList.add("is-visible");
-    form.reset();
+    var formData = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/info@ocalasignaturepainting.com", {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" }
+    })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("FormSubmit request failed with status " + response.status);
+        }
+        return response.json();
+      })
+      .then(function () {
+        formSuccess.classList.add("is-visible");
+        form.reset();
+      })
+      .catch(function () {
+        formError.classList.add("is-visible");
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitBtnDefaultText;
+      });
   });
 
   var galleryTrack = document.getElementById("galleryTrack");

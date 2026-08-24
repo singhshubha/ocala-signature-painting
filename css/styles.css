@@ -20,6 +20,7 @@
   /* Derived washes (opacity variants of palette colors only) */
   --secondary-tint: rgba(200, 164, 106, 0.12);
   --success-tint: rgba(94, 125, 90, 0.12);
+  --cta-tint: rgba(163, 32, 32, 0.1);
   --nav-bg: rgba(255, 255, 255, 0.92);
 
   /* Logo palette, sampled directly from images/logo-wordmark.png */
@@ -1676,6 +1677,9 @@ body.lightbox-open {
 .field.has-error .field-error {
   display: block;
 }
+.field.has-error .field-hint {
+  display: none;
+}
 .field.has-error input,
 .field.has-error select,
 .field.has-error textarea {
@@ -1741,6 +1745,36 @@ body.lightbox-open {
   color: var(--success);
   font-size: 1.3rem;
   flex-shrink: 0;
+}
+.form-error {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  background: var(--cta-tint);
+  border-radius: var(--radius-input);
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  font-size: var(--text-base);
+  color: var(--text);
+}
+.form-error.is-visible {
+  display: flex;
+}
+.form-error .icon {
+  color: var(--cta);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.form-error a {
+  color: var(--cta);
+  font-weight: 600;
+}
+.form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.form-submit:disabled:active {
+  transform: none;
 }
 
 @media (max-width: 900px) {
