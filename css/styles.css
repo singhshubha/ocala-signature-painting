@@ -345,7 +345,7 @@ p {
   cursor: pointer;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1140px) {
   .nav-links,
   .nav-phone {
     display: none;
@@ -354,17 +354,43 @@ p {
     display: block;
   }
 }
+.btn-label-short {
+  display: none;
+}
 @media (max-width: 480px) {
+  .nav-inner {
+    gap: 12px;
+  }
   .brand-logo {
     height: 32px;
   }
   .nav-actions {
-    gap: 12px;
+    gap: 10px;
   }
   .nav-actions .btn-sm {
     min-height: 44px;
     padding: 12px 16px;
     font-size: var(--text-xs);
+  }
+  .nav-actions .btn-sm .btn-label-full {
+    display: none;
+  }
+  .nav-actions .btn-sm .btn-label-short {
+    display: inline;
+  }
+}
+@media (max-width: 360px) {
+  .wrap {
+    padding-inline: 14px;
+  }
+  .brand-logo {
+    height: 28px;
+  }
+  .nav-actions {
+    gap: 8px;
+  }
+  .nav-actions .btn-sm {
+    padding: 12px 14px;
   }
 }
 
@@ -832,12 +858,12 @@ body.lightbox-open {
   .stats-row {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 28px;
+    column-gap: 16px;
   }
-  .stat:nth-child(3) {
+  .stat {
+    min-width: 0;
     border-left: none;
-  }
-  .stat:nth-child(odd) {
-    border-left: none;
+    padding-inline: 0;
   }
 }
 
