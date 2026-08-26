@@ -319,23 +319,6 @@ p {
   gap: 18px;
   flex-shrink: 0;
 }
-.nav-phone {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-  font-size: var(--text-base);
-  white-space: nowrap;
-  transition: color var(--transition-fast) ease;
-}
-.nav-phone:hover {
-  color: var(--brand);
-}
-.nav-phone .icon {
-  color: var(--brand);
-}
 .nav-toggle {
   display: none;
   background: none;
@@ -347,8 +330,7 @@ p {
 }
 
 @media (max-width: 1140px) {
-  .nav-links,
-  .nav-phone {
+  .nav-links {
     display: none;
   }
   .nav-toggle {
