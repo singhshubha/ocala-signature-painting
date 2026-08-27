@@ -689,6 +689,11 @@ body.lightbox-open {
   margin-top: 32px;
   flex-wrap: wrap;
 }
+.hero-calls {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 .hero-call {
   display: flex;
   align-items: center;
@@ -696,7 +701,8 @@ body.lightbox-open {
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
-  padding: 14px 8px;
+  font-size: var(--text-base);
+  padding: 7px 8px;
   transition: color var(--transition-fast) ease;
 }
 .hero-call:hover {
@@ -705,6 +711,11 @@ body.lightbox-open {
 .hero-call .icon {
   color: var(--cta);
   font-size: 1.15rem;
+  flex-shrink: 0;
+}
+.hero-call strong {
+  color: var(--brand);
+  margin-right: 4px;
 }
 .hero-trust {
   display: flex;
