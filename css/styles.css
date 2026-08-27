@@ -38,6 +38,7 @@
   --radius-input: 12px;
   --nav-height: 82px;
   --strip-height: 6px;
+  --wrap-pad: 24px;
   --max: 1320px;
   --focus-ring: 0 0 0 3px rgba(84, 28, 22, 0.28);
 
@@ -145,11 +146,11 @@ p {
   width: 100%;
   max-width: var(--max);
   margin-inline: auto;
-  padding-inline: 24px;
+  padding-inline: var(--wrap-pad);
 }
 @media (max-width: 640px) {
-  .wrap {
-    padding-inline: 20px;
+  :root {
+    --wrap-pad: 20px;
   }
 }
 
@@ -363,8 +364,8 @@ p {
   }
 }
 @media (max-width: 360px) {
-  .wrap {
-    padding-inline: 14px;
+  :root {
+    --wrap-pad: 14px;
   }
   .brand-logo {
     height: 28px;
@@ -1229,6 +1230,7 @@ body.lightbox-open {
 .gallery-carousel {
   position: relative;
   perspective: 1600px;
+  overflow: hidden;
 }
 .gallery-track {
   position: relative;
@@ -1506,8 +1508,8 @@ body.lightbox-open {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 12px;
-  margin: 0 -24px;
-  padding-inline: 24px;
+  margin: 0 calc(var(--wrap-pad) * -1);
+  padding-inline: var(--wrap-pad);
 }
 .testimonial {
   scroll-snap-align: start;
@@ -1589,6 +1591,13 @@ body.lightbox-open {
   gap: 56px;
   align-items: start;
 }
+.contact-grid > * {
+  /* Grid items default to a min-width based on their content's intrinsic
+     size. Native file inputs in particular refuse to shrink below their
+     browser-drawn minimum, which would otherwise force this whole track
+     (and the page) wider than the viewport. */
+  min-width: 0;
+}
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -1652,6 +1661,7 @@ body.lightbox-open {
   flex-direction: column;
   gap: 6px;
   margin-bottom: 20px;
+  min-width: 0;
 }
 .field label {
   font-size: var(--text-sm);
@@ -1688,6 +1698,9 @@ body.lightbox-open {
   font-family: inherit;
   background: var(--bg);
   color: var(--text);
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 .field input::placeholder,
 .field textarea::placeholder {
