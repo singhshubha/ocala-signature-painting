@@ -103,8 +103,6 @@
   var form = document.getElementById("estimateForm");
   var formSuccess = document.getElementById("formSuccess");
   var formError = document.getElementById("formError");
-  var photosInput = document.getElementById("photos");
-  var MAX_ATTACHMENT_BYTES = 10 * 1024 * 1024; // FormSubmit's combined attachment limit
 
   function setError(fieldName, hasError) {
     var field = form.querySelector('[data-field="' + fieldName + '"]');
@@ -113,17 +111,6 @@
 
   function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  }
-
-  function attachmentsTooLarge() {
-    if (!photosInput || !photosInput.files || !photosInput.files.length) {
-      return false;
-    }
-    var total = 0;
-    for (var i = 0; i < photosInput.files.length; i++) {
-      total += photosInput.files[i].size;
-    }
-    return total > MAX_ATTACHMENT_BYTES;
   }
 
   form.addEventListener("submit", function (event) {
@@ -138,15 +125,13 @@
     var phoneValid = phone.length > 6;
     var emailValid = isValidEmail(email);
     var projectValid = project.length > 0;
-    var photosValid = !attachmentsTooLarge();
 
     setError("name", !nameValid);
     setError("phone", !phoneValid);
     setError("email", !emailValid);
     setError("project", !projectValid);
-    setError("photos", !photosValid);
 
-    if (!nameValid || !phoneValid || !emailValid || !projectValid || !photosValid) {
+    if (!nameValid || !phoneValid || !emailValid || !projectValid) {
       return;
     }
 
