@@ -1,2 +1,2 @@
-# Locally-installed Claude tooling (external repo clones, not project content)
-.claude/ui-ux-pro-max/
+# Claude Code tooling (skills, local settings) — not part of the website source
+.claude/
